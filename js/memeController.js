@@ -2,9 +2,9 @@
 
 function renderMeme() {
     const meme = getMeme()
-    const elImg = document.querySelector(`img${meme.id}`)
+    const elImg = document.querySelector(`.img${meme.selectedImgId}`)
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
-    drawText('us.', 225, 20)
+    drawText(meme.lines[0].txt, 225, 20)
 }
 
 function drawText(text, x, y) {
@@ -22,6 +22,14 @@ function onInit() {
     gCanvas = document.querySelector('.canvas')
     gCtx = gCanvas.getContext('2d')
     renderMeme()
+   renderInput()
+}
+
+function renderInput(){
+    const elInput = document.querySelector('.text-input')
+    elInput.addEventListener('input', (event) => {
+        setLineTxt(event.target.value)
+        renderMeme()})
 }
 
 // function onDraw(ev) {

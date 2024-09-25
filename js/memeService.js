@@ -17,11 +17,13 @@ var gMeme = {
     ]
 }
 
-function getMeme(){
+function getMeme() {
     return gMeme
 }
 
-
+function setLineTxt(text){
+    gMeme.lines[0].txt = text
+}
 
 
 
