@@ -38,6 +38,7 @@ function getMeme(){
 
 
 
+
 function onSelectImg(elImg) {
     gCtx.drawImg(elImg, 0, 0, gCanvas.width, gCanvas.height)
 }
