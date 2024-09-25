@@ -3,8 +3,6 @@
 let gCanvas
 let gCtx
 
-var gImgs = [{ id: 2, url: 'img/2.jpg', keywords: ['cute', 'dog'] }]
-
 var gMeme = {
     selectedImgId: 2,
     selectedLineIdx: 0,
