@@ -4,22 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles/styles.css">
     <title>🌸Effie's Memes🌸</title>
 </head>
 
 <body onload="onInit()">
 
+    <header class="main-header">
+        <div class="logo">
+            <h1>MemeGen</h1>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav-list clean-list">
+                <li class="gallery-nav" onclick="onShowGallery()">Gallery</li>
+                <li class="about-nav">About</li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="gallery">
-        <ul class="gallery-list">
-            <!-- <li class="li-img2"></li>
-                <img class="img2" src="img/2.jpg">
-                </li> -->
+        <ul class="gallery-list clean-list">
+          
         </ul>
     </section>
 
 
-    <section class="editor">
+    <section hidden class="editor">
         <canvas class="canvas" width="450" height="450"></canvas>
         <input type="text" class="text-input" placeholder="Enter text here">
         <!-- <a href="#" onclick="downloadCanvas(this)" download>Download</a> -->

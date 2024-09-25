@@ -1,15 +1,33 @@
 'usr strict'
 
+
+
 function renderGallery() {
     const elGallery = document.querySelector('.gallery-list')
     let strHtml = ''
     gImgs.forEach(img => {
         strHtml += `<li class="li-img${img.id}">
-        <img class="img${img.id}" src="img/${img.id}.jpg">
+        <img class="img${img.id}" src="img/${img.id}.jpg" onclick="onImgSelect('${img.id}'); onShowEditor()">
         </li>`
     })
     elGallery.innerHTML = strHtml
 }
 
+function onImgSelect(imgId){
+        setImg(imgId)
+        renderMeme()
+        renderInput()
+}
 
+function onShowGallery() {
+    document.querySelector('.editor').style.display = 'none'
+    document.querySelector('.gallery').style.display = 'block'
+    // document.querySelector('.about').style.display = 'none'
+    // document.querySelector('.gallery-nav').style.display = 'block'
+}
 
+function onShowAbout() {
+    document.querySelector('.gallery').style.display = 'none'
+    document.querySelector('.editor').style.display = 'none'
+    document.querySelector('.about').style.display = 'block'
+}

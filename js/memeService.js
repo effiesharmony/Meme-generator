@@ -4,13 +4,14 @@ let gCanvas
 let gCtx
 
 var gMeme = {
-    selectedImgId: 2,
+    selectedImgId: 0,
     selectedLineIdx: 0,
     lines: [
         {
             txt: 'Enter text here',
             size: 20,
-            color: 'black'
+            strokeColor: 'black',
+            fillColor: 'white'
         }
     ]
 }
@@ -23,8 +24,9 @@ function setLineTxt(text){
     gMeme.lines[0].txt = text
 }
 
-
-
+function setImg(imgId){
+    gMeme.selectedImgId = imgId
+}
 
 
 
