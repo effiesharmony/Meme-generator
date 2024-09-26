@@ -16,8 +16,6 @@ function renderMeme() {
 }
 
 function drawText(line) {
-    gCtx.textAlign = 'left'
-    gCtx.textBaseline = 'top'
     gCtx.lineWidth = 2
     gCtx.strokeStyle = line.strokeColor
     gCtx.fillStyle = line.fillColor

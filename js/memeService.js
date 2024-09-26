@@ -18,9 +18,12 @@ let gMeme = {
     ]
 }
 
-function resetFirstLinePos() {
+function resetFirstLine() {
     gMeme.lines[0].posX = 224
     gMeme.lines[0].posY = 40
+    gMeme.lines[0].txt = 'Enter text here'
+    const elTextInput = document.querySelector('.text-input')
+    elTextInput.value = ''
 }
 
 function getMeme() {
