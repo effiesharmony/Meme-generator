@@ -1,8 +1,31 @@
 'use strict'
 function onInit() {
     renderGallery()
+    listeners()
     gCanvas = document.querySelector('.canvas')
     gCtx = gCanvas.getContext('2d')
+}
+
+function listeners(){
+    strokeColorListener()
+    fillColorListener()
+    renderInput()
+}
+
+function strokeColorListener(){
+    const elColorPicker = document.querySelector('.stroke-color')
+    elColorPicker.addEventListener("input", (event) => {
+        setStrokeColor(event.target.value)
+        renderMeme()
+    })
+}
+
+function fillColorListener(){
+    const elColorPicker = document.querySelector('.fill-color')
+    elColorPicker.addEventListener("input", (event) => {
+        setFillColor(event.target.value)
+        renderMeme()
+    })
 }
 
 function renderMeme() {

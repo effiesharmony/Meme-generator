@@ -15,7 +15,6 @@ function onImgSelect(imgId){
         setImg(imgId)
         resetFirstLine()
         renderMeme()
-        renderInput()
 }
 
 function onShowGallery() {

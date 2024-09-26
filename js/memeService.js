@@ -137,11 +137,12 @@ function fontSmaller() {
 
 }
 
-function setStrokeColor() {
-    // gMeme.lines[gMeme.selectedLineIdx].strokeColor = 
+function setStrokeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].strokeColor = color
 }
 
-function setFillColor() {
+function setFillColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].fillColor = color
 
 }
 
