@@ -11,7 +11,6 @@
 @import url('./components/main-header.css');
 @import url('./components/editor.css');
 @import url('./components/gallery.css');
-@import url('./components/footer.css');
 
 /* Media Queries */
 @import url('./setup/mq.css');

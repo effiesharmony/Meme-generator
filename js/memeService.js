@@ -22,8 +22,7 @@ function resetFirstLine() {
     gMeme.lines[0].posX = 224
     gMeme.lines[0].posY = 40
     gMeme.lines[0].txt = 'Enter text here'
-    const elTextInput = document.querySelector('.text-input')
-    elTextInput.value = ''
+    updateTextBox()
 }
 
 function getMeme() {
@@ -41,6 +40,14 @@ function setTextAlign(alignment) {
     } else {
         line.posX = gCanvas.width - gCanvas.width * 0.05
     }
+}
+
+function selectClickedLine() {
+    let line = gMeme.lines[gMeme.selectedLineIdx]
+    let textWidth = gCtx.measureText(line.txt).width
+    let textHeight = line.size * 1.286
+
+
 }
 
 function getEvPos(ev) {

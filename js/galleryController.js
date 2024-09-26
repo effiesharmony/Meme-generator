@@ -20,12 +20,5 @@ function onImgSelect(imgId){
 function onShowGallery() {
     document.querySelector('.editor').style.display = 'none'
     document.querySelector('.gallery').style.display = 'block'
-    // document.querySelector('.about').style.display = 'none'
     // document.querySelector('.gallery-nav').style.display = 'block'
-}
-
-function onShowAbout() {
-    document.querySelector('.gallery').style.display = 'none'
-    document.querySelector('.editor').style.display = 'none'
-    document.querySelector('.about').style.display = 'block'
 }

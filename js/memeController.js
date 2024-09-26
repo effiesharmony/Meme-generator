@@ -6,13 +6,13 @@ function onInit() {
     gCtx = gCanvas.getContext('2d')
 }
 
-function listeners(){
+function listeners() {
     strokeColorListener()
     fillColorListener()
     renderInput()
 }
 
-function strokeColorListener(){
+function strokeColorListener() {
     const elColorPicker = document.querySelector('.stroke-color')
     elColorPicker.addEventListener("input", (event) => {
         setStrokeColor(event.target.value)
@@ -20,7 +20,7 @@ function strokeColorListener(){
     })
 }
 
-function fillColorListener(){
+function fillColorListener() {
     const elColorPicker = document.querySelector('.fill-color')
     elColorPicker.addEventListener("input", (event) => {
         setFillColor(event.target.value)
@@ -38,7 +38,7 @@ function renderMeme() {
     if (gMeme.lines.length > 0) drawTextFrame()
 }
 
-function onTextAlign(alignment){
+function onTextAlign(alignment) {
     setTextAlign(alignment)
     renderMeme()
 }
@@ -67,28 +67,45 @@ function drawTextFrame() {
     gCtx.strokeStyle = 'white'
 
     gCtx.lineWidth = 1.5
-    if(line.textAlignment === 'left'){
+    if (line.textAlignment === 'left') {
         gCtx.strokeRect(line.posX - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//left
-    } else if(line.textAlignment === 'center'){
+    } else if (line.textAlignment === 'center') {
         gCtx.strokeRect(line.posX - (textWidth / 2) - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//center
     } else {
         gCtx.strokeRect(line.posX - (textWidth) - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//right
     }
 }
 
+function onMouseClick(ev) {
+    const { offsetX, offsetY, clientX, clientY } = ev
+
+    const clickedLine = gMeme.lines.find(line => {
+        let textWidth = gCtx.measureText(line.txt).width
+        let textHeight = line.size * 1.286
+        return (
+            offsetX >= line.posX - (textWidth / 2) && offsetX <= line.posX + (textWidth / 2) &&
+            offsetY >= line.posY - (textHeight / 2) && offsetY <= line.posY + (textHeight / 2)
+        )
+    })
+    if (clickedLine) {
+        gMeme.selectedLineIdx = gMeme.lines.indexOf(clickedLine)
+        updateTextBox()
+        renderMeme()
+    }
+}
+
 function onAddLine() {
     addLine()
     renderMeme()
-    const elTextInput = document.querySelector('.text-input')
-    elTextInput.value = ''
+    updateTextBox()
 }
 
-function onLineUp(){
+function onLineUp() {
     lineUp()
     renderMeme()
 }
 
-function onLineDown(){
+function onLineDown() {
     lineDown()
     renderMeme()
 }
@@ -96,6 +113,10 @@ function onLineDown(){
 function onSwitchLine() {
     switchLine()
     renderMeme()
+    updateTextBox()
+}
+
+function updateTextBox() {
     const elTextInput = document.querySelector('.text-input')
     if (gMeme.lines[gMeme.selectedLineIdx].txt !== elTextInput.placeholder) {
         elTextInput.value = gMeme.lines[gMeme.selectedLineIdx].txt
