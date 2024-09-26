@@ -9,17 +9,12 @@ var gMeme = {
     lines: [
         {
             txt: 'Enter text here',
+            posX: '224',
+            posY: '40',
             size: 40,
             strokeColor: 'black',
             fillColor: 'white'
         },
-
-        {
-            txt: 'Enter text here',
-            size: 40,
-            strokeColor: 'black',
-            fillColor: 'white'
-        }
     ]
 }
 
@@ -28,20 +23,51 @@ function getMeme() {
 }
 
 function setLineTxt(text) {
-    gMeme.lines[0].txt = text
+    gMeme.lines[gMeme.selectedLineIdx].txt = text
+}
+
+function switchLine() {
+    gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
+}
+
+function addLine() {
+    if (gMeme.lines.length === 1) {
+        gMeme.lines.push(
+            {
+                txt: 'Enter text here',
+                posX: '224',
+                posY: '400',
+                size: 40,
+                strokeColor: 'black',
+                fillColor: 'white'
+            },
+        )
+    } else {
+        gMeme.lines.push(
+            {
+                txt: 'Enter text here',
+                posX: '224',
+                posY: '224',
+                size: 40,
+                strokeColor: 'black',
+                fillColor: 'white'
+            },
+        )
+    }
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
 function fontBigger() {
-    gMeme.lines[0].size += 2
+    gMeme.lines[gMeme.selectedLineIdx].size += 2
 }
 
 function fontSmaller() {
-    gMeme.lines[0].size -= 2
+    gMeme.lines[gMeme.selectedLineIdx].size -= 2
 
 }
 
 function setStrokeColor() {
-    // gMeme.lines[0].strokeColor = 
+    // gMeme.lines[gMeme.selectedLineIdx].strokeColor = 
 }
 
 function setFillColor() {
