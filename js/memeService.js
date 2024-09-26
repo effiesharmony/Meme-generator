@@ -30,6 +30,19 @@ function getMeme() {
     return gMeme
 }
 
+function setTextAlign(alignment) {
+    let line = gMeme.lines[gMeme.selectedLineIdx]
+    line.textAlignment = alignment
+
+    if (line.textAlignment === 'left') {
+        line.posX = gCanvas.width - gCanvas.width * 0.95
+    } else if (line.textAlignment === 'center') {
+        line.posX = gCanvas.width / 2
+    } else {
+        line.posX = gCanvas.width - gCanvas.width * 0.05
+    }
+}
+
 function getEvPos(ev) {
 
     let pos = {

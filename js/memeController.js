@@ -15,12 +15,17 @@ function renderMeme() {
     if (gMeme.lines.length > 0) drawTextFrame()
 }
 
+function onTextAlign(alignment){
+    setTextAlign(alignment)
+    renderMeme()
+}
+
 function drawText(line) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = line.strokeColor
     gCtx.fillStyle = line.fillColor
     gCtx.font = `${line.size}px Impact`
-    gCtx.textAlign = 'center'
+    gCtx.textAlign = line.textAlignment
     gCtx.textBaseline = 'middle'
     gCtx.fillText(line.txt, line.posX, line.posY)
     gCtx.strokeText(line.txt, line.posX, line.posY)
@@ -39,7 +44,13 @@ function drawTextFrame() {
     gCtx.strokeStyle = 'white'
 
     gCtx.lineWidth = 1.5
-    gCtx.strokeRect(line.posX - (textWidth / 2) - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)
+    if(line.textAlignment === 'left'){
+        gCtx.strokeRect(line.posX - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//left
+    } else if(line.textAlignment === 'center'){
+        gCtx.strokeRect(line.posX - (textWidth / 2) - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//center
+    } else {
+        gCtx.strokeRect(line.posX - (textWidth) - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//right
+    }
 }
 
 function onAddLine() {
