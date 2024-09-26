@@ -22,6 +22,33 @@ function getMeme() {
     return gMeme
 }
 
+function getEvPos(ev) {
+
+    let pos = {
+        x: ev.offsetX,
+        y: ev.offsetY,
+    }
+
+    if (TOUCH_EVS.includes(ev.type)) {
+        //* Prevent triggering the mouse screen dragging event
+        ev.preventDefault()
+        //* Gets the first touch point
+        ev = ev.changedTouches[0]
+        //* Calc the right pos according to the touch screen
+        pos = {
+            x: ev.clientX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: ev.clientY - ev.target.offsetTop - ev.target.clientTop,
+        }
+    }
+    return pos
+}
+
+function deleteLine() {
+    if (gMeme.lines.length === 0) return
+    gMeme.lines.pop(gMeme.lines[gMeme.selectedLineIdx])
+    gMeme.selectedLineIdx--
+}
+
 function setLineTxt(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text
 }
@@ -31,7 +58,18 @@ function switchLine() {
 }
 
 function addLine() {
-    if (gMeme.lines.length === 1) {
+    if (gMeme.lines.length === 0) {
+        gMeme.lines.push(
+            {
+                txt: 'Enter text here',
+                posX: '224',
+                posY: '40',
+                size: 40,
+                strokeColor: 'black',
+                fillColor: 'white'
+            }
+        )
+    } else if (gMeme.lines.length === 1) {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
@@ -40,7 +78,7 @@ function addLine() {
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white'
-            },
+            }
         )
     } else {
         gMeme.lines.push(
@@ -51,7 +89,7 @@ function addLine() {
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white'
-            },
+            }
         )
     }
     gMeme.selectedLineIdx = gMeme.lines.length - 1

@@ -12,7 +12,7 @@ function renderMeme() {
     gMeme.lines.forEach(line => {
         drawText(line)
     })
-    drawTextFrame()
+    if (gMeme.lines.length > 0) drawTextFrame()
 }
 
 function drawText(line) {
@@ -26,6 +26,11 @@ function drawText(line) {
     gCtx.textBaseline = 'middle'
     gCtx.fillText(line.txt, line.posX, line.posY)
     gCtx.strokeText(line.txt, line.posX, line.posY)
+}
+
+function onDeleteLine() {
+    deleteLine()
+    renderMeme()
 }
 
 function drawTextFrame() {
