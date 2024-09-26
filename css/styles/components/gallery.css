@@ -1,0 +1,13 @@
+.gallery-list{
+    display: flex;
+    flex-wrap: wrap;
+    columns: 4;
+    gap: 15px;
+    overflow: auto;
+}
+
+img{
+    flex: 1 1 250px;
+    max-width: 150px;
+    min-width: 0;
+}

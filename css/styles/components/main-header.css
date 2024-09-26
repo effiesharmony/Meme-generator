@@ -1,14 +1,18 @@
 .main-header{
-    inset: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px 10vw;
+    margin-bottom: 12px;
+    background-color: pink;
 }
 
 .main-nav-list{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     gap: 20px;
     font-size: 1.5rem;
 }
 
+h1{
+    margin: 0;
+}
