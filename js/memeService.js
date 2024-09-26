@@ -42,14 +42,6 @@ function setTextAlign(alignment) {
     }
 }
 
-function selectClickedLine() {
-    let line = gMeme.lines[gMeme.selectedLineIdx]
-    let textWidth = gCtx.measureText(line.txt).width
-    let textHeight = line.size * 1.286
-
-
-}
-
 function getEvPos(ev) {
 
     let pos = {
