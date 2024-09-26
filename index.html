@@ -28,11 +28,19 @@
         </ul>
     </section>
 
-
     <section hidden class="editor">
+        <div class="canvas-container">
         <canvas class="canvas" width="450" height="450"></canvas>
-        <input type="text" class="text-input" placeholder="Enter text here">
-        <!-- <a href="#" onclick="downloadCanvas(this)" download>Download</a> -->
+        </div>
+
+        <div class="control-panel">
+            <input type="text" class="text-input" placeholder="Enter text here">
+            <input type="color" class="stroke-color">
+            <input type="color" class="fill-color" value="#ffffff">
+            <button class="font-size-decrease" onclick="onFontDecrease()">-</button>
+            <button class="font-size-increase" onclick="onFontIncrease()">+</button>
+            <a href="#" onclick="downloadCanvas(this)" download>Download</a>
+        </div>
     </section>
 
     <footer class="main-footer">

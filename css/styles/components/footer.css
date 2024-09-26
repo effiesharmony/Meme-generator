@@ -1,6 +1,5 @@
 .main-footer {
-    position: absolute;
-    bottom: 0;
+    top: 100%;
     width: 100%;
     text-align: center;
     padding: 10px;
