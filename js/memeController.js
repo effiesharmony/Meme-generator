@@ -66,7 +66,7 @@ function drawTextFrame() {
     let textHeight = line.size * 1.286
     gCtx.strokeStyle = 'white'
 
-    gCtx.lineWidth = 1.5
+    // gCtx.lineWidth = 1.5
     if (line.textAlignment === 'left') {
         gCtx.strokeRect(line.posX - 5, line.posY - (textHeight / 2), textWidth + 10, textHeight)//left
     } else if (line.textAlignment === 'center') {
@@ -135,7 +135,7 @@ function renderInput() {
 
 function onShowEditor() {
     document.querySelector('.gallery').style.display = 'none'
-    document.querySelector('.editor').style.display = 'flex'
+    document.querySelector('.editor').style.display = 'grid'
 }
 
 function onFontIncrease() {

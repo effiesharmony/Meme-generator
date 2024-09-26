@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 
+html{
+    font-family: 'montserrat', sans-serif;
+}
+
 body{
     margin: 0;
     text-align: center;
 }
-

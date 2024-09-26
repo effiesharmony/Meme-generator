@@ -8,7 +8,7 @@
     <title>🌸Effie's Memes🌸</title>
 </head>
 
-<body onload="onInit()">
+<body onload="onInit()" class="main-layout">
 
     <header class="main-header">
         <div class="logo">
@@ -24,31 +24,50 @@
 
     <section class="gallery">
         <ul class="gallery-list clean-list">
-          
+
         </ul>
     </section>
 
     <section hidden class="editor">
         <div class="canvas-container">
-        <canvas class="canvas" width="450" height="450" onclick="onMouseClick(event)"></canvas>
+            <canvas class="canvas" width="600" height="600" onclick="onMouseClick(event)"></canvas>
         </div>
 
-        <div class="control-panel">
-            <input type="text" class="text-input" placeholder="Enter text here">
-            <input type="color" class="stroke-color">
-            <input type="color" class="fill-color" value="#ffffff">
-            <button class="add-line" onclick="onAddLine()"><img src="img/add.png"></button>
-            <form action=""></form>
-            <button class="text-align-left" onclick="onTextAlign('left')"><img src="img/align-to-left.png"></button>
-            <button class="text-align-center" onclick="onTextAlign('center')"><img src="img/center-text-alignment.png"></button>
-            <button class="text-align-right" onclick="onTextAlign('right')"><img src="img/align-to-right.png"></button>
-            <button class="font-size-decrease" onclick="onFontDecrease()"><img src="img/decrease font - icon.png"></button>
-            <button class="font-size-increase" onclick="onFontIncrease()"><img src="img/increase font - icon.png"></button>
-            <button class="move-line-up" onclick="onLineUp()"><img src="img/arrow-up.png"></button>
-            <button class="move-line-down" onclick="onLineDown()"><img src="img/arrow-down.png"></button>
-            <button class="switch-line" onclick="onSwitchLine()"><img src="img/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
-            <button class="delete-line" onclick="onDeleteLine()"><img src="img/trash.png"></button>
-            <a href="#" onclick="downloadCanvas(this)" download><img src="img/download.png"></a>
+        <div class="panel-container">
+            <div class="control-panel">
+                <input type="text" class="text-input" placeholder="Enter text here">
+                <div class="colors">
+                    <input type="color" class="stroke-color">
+                    <input type="color" class="fill-color" value="#ffffff">
+                </div>
+                <div class="add-remove">
+                    <button class="add-line" onclick="onAddLine()"><img src="img/add.png"></button>
+                    <button class="delete-line" onclick="onDeleteLine()"><img src="img/trash.png"></button>
+                </div>
+                <div class="line-control">
+                    <button class="switch-line" onclick="onSwitchLine()"><img
+                            src="img/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
+                    <button class="move-line-up" onclick="onLineUp()"><img src="img/arrow-up.png"></button>
+                    <button class="move-line-down" onclick="onLineDown()"><img src="img/arrow-down.png"></button>
+                </div>
+                <div class="text-alignment">
+                    <button class="text-align-left" onclick="onTextAlign('left')"><img
+                            src="img/align-to-left.png"></button>
+                    <button class="text-align-center" onclick="onTextAlign('center')"><img
+                            src="img/center-text-alignment.png"></button>
+                    <button class="text-align-right" onclick="onTextAlign('right')"><img
+                            src="img/align-to-right.png"></button>
+                </div>
+                <div class="font-sizes">
+                    <button class="font-size-decrease" onclick="onFontDecrease()"><img
+                            src="img/decrease font - icon.png"></button>
+                    <button class="font-size-increase" onclick="onFontIncrease()"><img
+                            src="img/increase font - icon.png"></button>
+                </div>
+                <div class="download">
+                    <a href="#" onclick="downloadCanvas(this)" download><img src="img/download.png"></a>
+                </div>
+            </div>
         </div>
     </section>
 

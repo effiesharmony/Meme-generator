@@ -8,7 +8,7 @@ let gMeme = {
     lines: [
         {
             txt: 'Enter text here',
-            posX: 224,
+            posX: 300,
             posY: 40,
             size: 40,
             strokeColor: 'black',
@@ -19,7 +19,7 @@ let gMeme = {
 }
 
 function resetFirstLine() {
-    gMeme.lines[0].posX = 224
+    gMeme.lines[0].posX = 300
     gMeme.lines[0].posY = 40
     gMeme.lines[0].txt = 'Enter text here'
     updateTextBox()
@@ -100,7 +100,7 @@ function addLine() {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '224',
+                posX: '300',
                 posY: '40',
                 size: 40,
                 strokeColor: 'black',
@@ -112,8 +112,8 @@ function addLine() {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '224',
-                posY: '400',
+                posX: '300',
+                posY: '550',
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
@@ -124,11 +124,12 @@ function addLine() {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '224',
-                posY: '224',
+                posX: '300',
+                posY: '300',
                 size: 40,
                 strokeColor: 'black',
-                fillColor: 'white'
+                fillColor: 'white',
+                textAlignment: 'center'
             }
         )
     }
