@@ -1,7 +1,5 @@
 'usr strict'
 
-
-
 function renderGallery() {
     const elGallery = document.querySelector('.gallery-list')
     let strHtml = ''
@@ -15,6 +13,7 @@ function renderGallery() {
 
 function onImgSelect(imgId){
         setImg(imgId)
+        resetFirstLinePos()
         renderMeme()
         renderInput()
 }

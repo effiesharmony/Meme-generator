@@ -37,9 +37,11 @@
             <input type="text" class="text-input" placeholder="Enter text here">
             <input type="color" class="stroke-color">
             <input type="color" class="fill-color" value="#ffffff">
+            <button class="add-line" onclick="onAddLine()">New Text</button>
             <button class="font-size-decrease" onclick="onFontDecrease()">-</button>
             <button class="font-size-increase" onclick="onFontIncrease()">+</button>
-            <button class="add-line" onclick="onAddLine()">New Text</button>
+            <button class="move-line-up" onclick="onLineUp()">Up</button>
+            <button class="move-line-down" onclick="onLineDown()">Down</button>
             <button class="switch-line" onclick="onSwitchLine()">Switch Line</button>
             <button class="delete-line" onclick="onDeleteLine()">Delete Line</button>
             <a href="#" onclick="downloadCanvas(this)" download>Download</a>

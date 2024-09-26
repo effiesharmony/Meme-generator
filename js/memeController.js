@@ -51,6 +51,16 @@ function onAddLine() {
     elTextInput.value = ''
 }
 
+function onLineUp(){
+    lineUp()
+    renderMeme()
+}
+
+function onLineDown(){
+    lineDown()
+    renderMeme()
+}
+
 function onSwitchLine() {
     switchLine()
     renderMeme()

@@ -2,20 +2,25 @@
 
 let gCanvas
 let gCtx
-
-var gMeme = {
+let gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
     lines: [
         {
             txt: 'Enter text here',
-            posX: '224',
-            posY: '40',
+            posX: 224,
+            posY: 40,
             size: 40,
             strokeColor: 'black',
-            fillColor: 'white'
+            fillColor: 'white',
+            textAlignment: 'center'
         },
     ]
+}
+
+function resetFirstLinePos() {
+    gMeme.lines[0].posX = 224
+    gMeme.lines[0].posY = 40
 }
 
 function getMeme() {
@@ -57,6 +62,16 @@ function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
 
+function lineUp() {
+    if (gMeme.lines[gMeme.selectedLineIdx].posY) gMeme.lines[gMeme.selectedLineIdx].posY -= 10
+}
+
+function lineDown() {
+    if (gMeme.lines[gMeme.selectedLineIdx].posY < gCanvas.height) {
+        gMeme.lines[gMeme.selectedLineIdx].posY += 10
+    }
+}
+
 function addLine() {
     if (gMeme.lines.length === 0) {
         gMeme.lines.push(
@@ -66,7 +81,8 @@ function addLine() {
                 posY: '40',
                 size: 40,
                 strokeColor: 'black',
-                fillColor: 'white'
+                fillColor: 'white',
+                textAlignment: 'center'
             }
         )
     } else if (gMeme.lines.length === 1) {
@@ -77,7 +93,8 @@ function addLine() {
                 posY: '400',
                 size: 40,
                 strokeColor: 'black',
-                fillColor: 'white'
+                fillColor: 'white',
+                textAlignment: 'center'
             }
         )
     } else {
