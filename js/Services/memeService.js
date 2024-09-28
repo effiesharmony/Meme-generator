@@ -153,7 +153,6 @@ function fontBigger() {
 
 function fontSmaller() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 2
-
 }
 
 function setStrokeColor(color) {

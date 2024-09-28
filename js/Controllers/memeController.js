@@ -1,6 +1,8 @@
 'use strict'
 function onInit() {
-    localStorage.setItem('savedMemes', '{}')
+    if(!localStorage.getItem('savedMemes')){
+        localStorage.setItem('savedMemes', '{}')
+    }
     renderGallery()
     listeners()
     gCanvas = document.querySelector('.canvas')
@@ -145,6 +147,7 @@ function renderInput() {
 
 function onShowEditor() {
     document.querySelector('.gallery').style.display = 'none'
+    document.querySelector('.memes').style.display = 'none'
     document.querySelector('.editor').style.display = 'grid'
 }
 

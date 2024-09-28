@@ -1,4 +1,4 @@
-.main-header{
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,12 +7,24 @@
     background-color: pink;
 }
 
-.main-nav-list{
+.main-nav-list {
     display: flex;
     gap: 20px;
     font-size: 1.5rem;
 }
 
-h1{
+h1 {
     margin: 0;
+}
+
+.gallery img:hover {
+    cursor: pointer;
+}
+
+.saved-memes-nav:hover {
+    cursor: pointer;
+}
+
+.gallery-nav:hover {
+    cursor: pointer;
 }
