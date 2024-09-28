@@ -1,44 +1,52 @@
-.editor{
-    grid-auto-flow: column;
-    grid-template-columns: 20px 1fr 1fr 20px;
+.editor {
+  grid-auto-flow: column;
+  grid-template-columns: 20px 1fr 1fr 20px;
 }
 
-.canvas-container{
+.canvas-container {
   justify-content: end;
   align-items: end;
   /* max-width: 500px; */
   grid-column: 2;
 }
 
-.panel-container{
+.panel-container {
   max-width: 450px;
   grid-column: 3;
   border-radius: 10px;
   background-color: pink;
 }
 
-.control-panel div>*{
+.control-panel div>*:not(.colors){
   border-radius: 10px;
 }
 
-.control-panel{
+.colors>* {
+  border-radius: 5px;
+}
+
+.fonts{
+  height: 30px;
+}
+
+.control-panel {
   margin: 20px;
   display: grid;
   gap: 15px;
 }
 
-.text-input{
+.text-input {
   padding: 15px;
   max-width: 500px;
   border-radius: 10px;
   text-align: center;
 }
 
-.control-panel img{
+.control-panel img {
   max-width: 50px;
 }
 
-.download{
+.download {
   border-radius: 10px;
   border: 1px solid black;
   background-color: #fff;

@@ -17,6 +17,7 @@
         <nav class="main-nav">
             <ul class="main-nav-list clean-list">
                 <li class="gallery-nav" onclick="onShowGallery()">Gallery</li>
+                <li class="saved-memes-nav" onclick="onShowSaved()">Memes</li>
                 <li class="about-nav">About</li>
             </ul>
         </nav>
@@ -24,6 +25,12 @@
 
     <section class="gallery">
         <ul class="gallery-list clean-list">
+
+        </ul>
+    </section>
+
+    <section class="memes">
+        <ul class="saved-memes-list clean-list">
 
         </ul>
     </section>
@@ -37,6 +44,12 @@
             <div class="control-panel">
                 <input type="text" class="text-input" placeholder="Enter text here">
                 <div class="colors">
+                    <select name="fonts" id="fonts" class="fonts" onchange="onChangeFont()">
+                        <option value="impact">Impact</option>
+                        <option value="arial">Arial</option>
+                        <option value="courier-new">Courier New</option>
+                        <option value="brush script mt">Brush Script MT</option>
+                      </select>
                     <input type="color" class="stroke-color">
                     <input type="color" class="fill-color" value="#ffffff">
                 </div>
@@ -65,7 +78,8 @@
                             src="img/increase font - icon.png"></button>
                 </div>
                 <div class="download">
-                    <a href="#" onclick="downloadCanvas(this)" download><img src="img/download.png"></a>
+                    <button class="save" onclick="onSaveMeme()">Save</button>
+                    <a href="#" onclick="onDownloadCanvas(this)" download><img src="img/download.png"></a>
                 </div>
             </div>
         </div>
@@ -75,10 +89,12 @@
         <h2>🌸Effie Armony🌸</h2>
     </footer> -->
 
-    <script src="js/galleryService.js"></script>
-    <script src="js/memeService.js"></script>
-    <script src="js/galleryController.js"></script>
-    <script src="js/memeController.js"></script>
+    <script src="js/Controllers/memeController.js"></script>
+    <script src="js/Services/memeService.js"></script>
+    <script src="js/Controllers/savedController.js"></script>
+    <script src="js/Services/savedService.js"></script>
+    <script src="js/Controllers/galleryController.js"></script>
+    <script src="js/Services/galleryService.js"></script>
 </body>
 
 </html>

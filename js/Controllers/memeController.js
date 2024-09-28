@@ -1,5 +1,6 @@
 'use strict'
 function onInit() {
+    localStorage.setItem('savedMemes', '{}')
     renderGallery()
     listeners()
     gCanvas = document.querySelector('.canvas')
@@ -44,14 +45,21 @@ function onTextAlign(alignment) {
 }
 
 function drawText(line) {
+    console.log(line)
     gCtx.lineWidth = 2
     gCtx.strokeStyle = line.strokeColor
     gCtx.fillStyle = line.fillColor
-    gCtx.font = `${line.size}px Impact`
+    gCtx.font = `${line.size}px ${line.font}`
     gCtx.textAlign = line.textAlignment
     gCtx.textBaseline = 'middle'
     gCtx.fillText(line.txt, line.posX, line.posY)
     gCtx.strokeText(line.txt, line.posX, line.posY)
+}
+
+function onChangeFont(){
+    let selectedFont = document.getElementById('fonts').value
+    changeFont(selectedFont)
+    renderMeme()
 }
 
 function onDeleteLine() {
@@ -123,6 +131,8 @@ function updateTextBox() {
     } else {
         elTextInput.value = ''
     }
+    const elSelectedFont = document.querySelector('.fonts')
+    elSelectedFont.value = gMeme.lines[gMeme.selectedLineIdx].font
 }
 
 function renderInput() {

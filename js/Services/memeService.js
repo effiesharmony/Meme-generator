@@ -13,15 +13,30 @@ let gMeme = {
             size: 40,
             strokeColor: 'black',
             fillColor: 'white',
-            textAlignment: 'center'
+            textAlignment: 'center',
+            font: 'impact'
         },
     ]
 }
 
+function changeFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+
 function resetFirstLine() {
-    gMeme.lines[0].posX = 300
-    gMeme.lines[0].posY = 40
-    gMeme.lines[0].txt = 'Enter text here'
+    gMeme.lines = [
+        {
+            txt: 'Enter text here',
+            posX: 300,
+            posY: 40,
+            size: 40,
+            strokeColor: 'black',
+            fillColor: 'white',
+            textAlignment: 'center',
+            font: 'impact'
+        },
+    ]
+    gMeme.selectedLineIdx = 0
     updateTextBox()
 }
 
@@ -67,6 +82,7 @@ function deleteLine() {
     if (gMeme.lines.length === 0) return
     gMeme.lines.pop(gMeme.lines[gMeme.selectedLineIdx])
     gMeme.selectedLineIdx--
+    updateTextBox()
 }
 
 function setLineTxt(text) {
@@ -97,7 +113,8 @@ function addLine() {
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
-                textAlignment: 'center'
+                textAlignment: 'center',
+                font: 'impact'
             }
         )
     } else if (gMeme.lines.length === 1) {
@@ -109,7 +126,8 @@ function addLine() {
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
-                textAlignment: 'center'
+                textAlignment: 'center',
+                font: 'impact'
             }
         )
     } else {
@@ -121,7 +139,8 @@ function addLine() {
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
-                textAlignment: 'center'
+                textAlignment: 'center',
+                font: 'impact'
             }
         )
     }
