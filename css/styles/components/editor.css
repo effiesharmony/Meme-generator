@@ -1,32 +1,60 @@
-.editor {
-  grid-auto-flow: column;
-  grid-template-columns: 20px 1fr 1fr 20px;
-}
+
 
 .canvas-container {
-  justify-content: end;
-  align-items: end;
-  /* max-width: 500px; */
   grid-column: 2;
 }
 
+.canvas{
+  border-radius: 10px;
+}
+
+.emojis-container {
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+button {
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.emojis-container button {
+  font-size: 25px;
+  padding: 2px;
+  border: none;
+  background-color: #fff;
+}
+
 .panel-container {
-  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
   grid-column: 3;
   border-radius: 10px;
   background-color: pink;
 }
 
-.control-panel div>*:not(.colors){
+.control-panel div>*:not(.colors) {
   border-radius: 10px;
 }
 
 .colors>* {
   border-radius: 5px;
+  vertical-align: text-bottom;
 }
 
-.fonts{
+#color {
+  inline-size: 27px;
+}
+
+.fonts {
   height: 30px;
+  text-align: center;
 }
 
 .control-panel {
@@ -36,37 +64,54 @@
 }
 
 .text-input {
-  padding: 15px;
-  max-width: 500px;
+  padding: 10px;
+  max-width: 400px;
   border-radius: 10px;
   text-align: center;
 }
 
 .control-panel img {
-  max-width: 50px;
+  width: 30px;
 }
 
-.download {
-  display: flex;
+.download-btn {
+  display: block;
   border-radius: 10px;
-  border: 1px solid black;
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
   background-color: #fff;
   justify-content: center;
   align-items: center;
 }
 
-.save{
-  height: 30px;
+.download {
+  justify-self: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  width: 100px;
 }
 
-button:hover{
-cursor: pointer;
+.download .save img {
+  width: 30px;
 }
 
-select:hover{
-   cursor: pointer;
+.save {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
 }
 
-input:hover{
+button:hover {
+  cursor: pointer;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+input:hover {
   cursor: pointer;
 }

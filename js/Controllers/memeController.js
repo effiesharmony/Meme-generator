@@ -47,7 +47,6 @@ function onTextAlign(alignment) {
 }
 
 function drawText(line) {
-    console.log(line)
     gCtx.lineWidth = 2
     gCtx.strokeStyle = line.strokeColor
     gCtx.fillStyle = line.fillColor
@@ -110,6 +109,11 @@ function onAddLine() {
     updateTextBox()
 }
 
+function onAddEmoji(emoji){
+    addEmoji(emoji)
+    renderMeme()
+}
+
 function onLineUp() {
     lineUp()
     renderMeme()
@@ -128,13 +132,13 @@ function onSwitchLine() {
 
 function updateTextBox() {
     const elTextInput = document.querySelector('.text-input')
-    if (gMeme.lines[gMeme.selectedLineIdx].txt !== elTextInput.placeholder) {
+    if (gMeme.lines[gMeme.selectedLineIdx] && gMeme.lines[gMeme.selectedLineIdx].txt !== elTextInput.placeholder) {
         elTextInput.value = gMeme.lines[gMeme.selectedLineIdx].txt
     } else {
         elTextInput.value = ''
     }
     const elSelectedFont = document.querySelector('.fonts')
-    elSelectedFont.value = gMeme.lines[gMeme.selectedLineIdx].font
+    if (gMeme.lines[gMeme.selectedLineIdx]) elSelectedFont.value = gMeme.lines[gMeme.selectedLineIdx].font
 }
 
 function renderInput() {

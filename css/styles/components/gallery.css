@@ -4,10 +4,15 @@
     columns: 4;
     gap: 15px;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 img{
     border-radius: 10px;
     width: 250px;
     min-width: 0;
+}
+
+.gallery img:hover {
+    cursor: pointer;
 }

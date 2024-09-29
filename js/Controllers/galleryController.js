@@ -19,6 +19,6 @@ function onImgSelect(imgId){
 
 function onShowGallery() {
     document.querySelector('.editor').style.display = 'none'
+    document.querySelector('.memes').style.display = 'none'
     document.querySelector('.gallery').style.display = 'block'
-    // document.querySelector('.gallery-nav').style.display = 'block'
 }

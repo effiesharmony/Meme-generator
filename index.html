@@ -26,9 +26,12 @@
         <ul class="gallery-list clean-list">
 
         </ul>
+        <div class="bio">
+            <img src="" alt="">
+        </div>
     </section>
 
-    <section class="memes">
+    <section hidden class="memes">
         <ul class="saved-memes-list clean-list">
 
         </ul>
@@ -36,7 +39,7 @@
 
     <section hidden class="editor">
         <div class="canvas-container">
-            <canvas class="canvas" width="600" height="600" onclick="onMouseClick(event)"></canvas>
+            <canvas class="canvas" width="500" height="500" onclick="onMouseClick(event)"></canvas>
         </div>
 
         <div class="panel-container">
@@ -45,12 +48,12 @@
                 <div class="colors">
                     <select name="fonts" id="fonts" class="fonts" onchange="onChangeFont()">
                         <option value="impact">Impact</option>
+                        <option value="cursive">Comic Sans</option>
                         <option value="arial">Arial</option>
-                        <option value="courier-new">Courier New</option>
-                        <option value="brush script mt">Brush Script MT</option>
-                      </select>
-                    <input type="color" class="stroke-color">
-                    <input type="color" class="fill-color" value="#ffffff">
+                        <option value="monospace">Monospace</option>
+                    </select>
+                    <input type="color" class="stroke-color" id="color">
+                    <input type="color" class="fill-color" value="#ffffff" id="color">
                 </div>
                 <div class="add-remove">
                     <button class="add-line" onclick="onAddLine()"><img src="img/add.png"></button>
@@ -72,13 +75,27 @@
                 </div>
                 <div class="font-sizes">
                     <button class="font-size-decrease" onclick="onFontDecrease()"><img
-                            src="img/decrease font - icon.png"></button>
+                            src="img/decrease font - icon.png">
+                    </button>
                     <button class="font-size-increase" onclick="onFontIncrease()"><img
-                            src="img/increase font - icon.png"></button>
+                            src="img/increase font - icon.png">
+                    </button>
+                </div>
+                <div class="emojis-container">
+                    <div class="emojis">
+                        <button onclick="onAddEmoji('😍')">😍</button>
+                        <button onclick="onAddEmoji('✨')">✨</button>
+                        <button onclick="onAddEmoji('🥰')">🥰</button>
+                        <button onclick="onAddEmoji('🌸')">🌸</button>
+                        <button onclick="onAddEmoji('🐈')">🐈</button>
+                        <button onclick="onAddEmoji('🌻')">🌻</button>
+                        <button onclick="onAddEmoji('☀️')">☀️</button>
+                        <button onclick="onAddEmoji('💗')">💗</button>
+                    </div>
                 </div>
                 <div class="download">
-                    <button class="save" onclick="onSaveMeme()">Save</button>
-                    <a href="#" onclick="onDownloadCanvas(this)" download><img src="img/download.png"></a>
+                    <button class="save" onclick="onSaveMeme()"><img src="img/floppy-disk.png"></button>
+                    <a class="download-btn" href="#" onclick="onDownloadCanvas(this)" download><img src="img/download.png"></a>
                 </div>
             </div>
         </div>

@@ -5,18 +5,6 @@ let gCtx
 let gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
-    lines: [
-        {
-            txt: 'Enter text here',
-            posX: 300,
-            posY: 40,
-            size: 40,
-            strokeColor: 'black',
-            fillColor: 'white',
-            textAlignment: 'center',
-            font: 'impact'
-        },
-    ]
 }
 
 function changeFont(font) {
@@ -27,8 +15,8 @@ function resetFirstLine() {
     gMeme.lines = [
         {
             txt: 'Enter text here',
-            posX: 300,
-            posY: 40,
+            posX: gCanvas.width / 2,
+            posY: 50,
             size: 40,
             strokeColor: 'black',
             fillColor: 'white',
@@ -103,13 +91,26 @@ function lineDown() {
     }
 }
 
+function addEmoji(emoji) {
+    gMeme.lines.push(
+        {
+            txt: emoji,
+            posX: gCanvas.width / 2,
+            posY: gCanvas.height / 2,
+            size: 50,
+            textAlignment: 'center'
+        }
+    )
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+}
+
 function addLine() {
     if (gMeme.lines.length === 0) {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '300',
-                posY: '40',
+                posX: gCanvas.width / 2,
+                posY: 50,
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
@@ -121,8 +122,8 @@ function addLine() {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '300',
-                posY: '550',
+                posX: gCanvas.width / 2,
+                posY: gCanvas.height - 50,
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',
@@ -134,8 +135,8 @@ function addLine() {
         gMeme.lines.push(
             {
                 txt: 'Enter text here',
-                posX: '300',
-                posY: '300',
+                posX: gCanvas.width / 2,
+                posY: gCanvas.height / 2,
                 size: 40,
                 strokeColor: 'black',
                 fillColor: 'white',

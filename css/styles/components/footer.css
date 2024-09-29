@@ -1,8 +1,12 @@
 /* .main-footer {
-    top: 100%;
+    margin-top: 154px;
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     vertical-align: baseline;
     background-color: pink;
+}
+
+h2 {
+    margin: 0;
 } */

@@ -1,4 +1,12 @@
-.main-layout{
-    /* display: grid;
-    grid-template-columns: 20px 1fr 20px; */
+/* .main-layout {
+    display: grid;
+    grid-auto-flow: ;
+    grid-template-columns: 20px 1fr 20px;
+} */
+
+.editor {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 20px;
+    height: 60vh;
 }
