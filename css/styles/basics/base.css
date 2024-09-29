@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
-html{
-    font-family: 'montserrat', sans-serif;
-}
 
-body{
+
+html, body {
+    font-family: 'montserrat', sans-serif;
+    background-color: floralwhite;
+    height: 100%;
     margin: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }

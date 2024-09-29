@@ -12,7 +12,7 @@
 
     <header class="main-header">
         <div class="logo">
-            <h1>MemeGen</h1>
+            <h1>🌸MemeGen🌸</h1>
         </div>
         <nav class="main-nav">
             <ul class="main-nav-list clean-list">
@@ -27,7 +27,28 @@
 
         </ul>
         <div class="bio">
-            <img src="" alt="">
+            <img class="my-picture" src="img/effie.png.jpeg">
+            <section class="effie">
+                <h1>Effie Armony</h1>
+                <p>Mother of cats, breaker of awkward silences and creator of this meme generator </p>
+                <ul class="social-links clean-list">
+                    <li>
+                        <a href="#">
+                            <img class="instagram" src="img/instagram.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img class="facebook" src="img/facebook.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="github" src="img/github-logo.png">
+                        </a>
+                    </li>
+                </ul>
+            </section>
         </div>
     </section>
 
@@ -83,27 +104,31 @@
                 </div>
                 <div class="emojis-container">
                     <div class="emojis">
-                        <button onclick="onAddEmoji('😍')">😍</button>
-                        <button onclick="onAddEmoji('✨')">✨</button>
-                        <button onclick="onAddEmoji('🥰')">🥰</button>
                         <button onclick="onAddEmoji('🌸')">🌸</button>
-                        <button onclick="onAddEmoji('🐈')">🐈</button>
+                        <button onclick="onAddEmoji('😍')">😍</button>
                         <button onclick="onAddEmoji('🌻')">🌻</button>
-                        <button onclick="onAddEmoji('☀️')">☀️</button>
+                        <button onclick="onAddEmoji('🐞')">🐞</button>
+                        <button onclick="onAddEmoji('🥰')">🥰</button>
+                        <button onclick="onAddEmoji('🦋')">🦋</button>
+                        <button onclick="onAddEmoji('✨')">✨</button>
                         <button onclick="onAddEmoji('💗')">💗</button>
+                        <button onclick="onAddEmoji('🐈')">🐈</button>
                     </div>
                 </div>
                 <div class="download">
                     <button class="save" onclick="onSaveMeme()"><img src="img/floppy-disk.png"></button>
-                    <a class="download-btn" href="#" onclick="onDownloadCanvas(this)" download><img src="img/download.png"></a>
+                    <a class="download-btn" href="#" onclick="onDownloadCanvas(this)" download><img
+                            src="img/download.png"></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <footer class="main-footer">
-        <h2>🌸Effie Armony🌸</h2>
-    </footer> -->
+
+    <footer class="main-footer">
+        <h2 class="footer-header">🌸MemeGen🌸</h2>
+        <p>© 2024 created by Effie Armony</p>
+    </footer>
 
     <script src="js/Controllers/memeController.js"></script>
     <script src="js/Services/memeService.js"></script>

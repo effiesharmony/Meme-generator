@@ -1,12 +1,12 @@
-/* .main-footer {
-    margin-top: 154px;
+.main-footer {
+    display: block;
     width: 100%;
     text-align: center;
     padding: 15px;
-    vertical-align: baseline;
-    background-color: pink;
+    background-color: lightpink;
 }
 
-h2 {
-    margin: 0;
-} */
+.footer-header {
+    font-size: 1.3rem;
+    margin: 20 0;
+}

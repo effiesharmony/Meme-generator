@@ -1,11 +1,10 @@
-
-
 .canvas-container {
   grid-column: 2;
 }
 
 .canvas{
   border-radius: 10px;
+  border: 3px solid #fed5d0;
 }
 
 .emojis-container {
@@ -33,10 +32,10 @@ button {
   display: flex;
   justify-content: center;
   width: 500px;
-  height: 500px;
+  height: 506px;
   grid-column: 3;
   border-radius: 10px;
-  background-color: pink;
+  background-color: #fed5d0;
 }
 
 .control-panel div>*:not(.colors) {
@@ -115,3 +114,4 @@ select:hover {
 input:hover {
   cursor: pointer;
 }
+

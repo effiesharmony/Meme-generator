@@ -13,6 +13,7 @@
 @import url('./components/gallery.css');
 @import url('./components/memes.css');
 @import url('./components/footer.css');
+@import url('./components/bio.css');
 
 /* Media Queries */
 @import url('./setup/mq.css');

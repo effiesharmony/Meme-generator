@@ -167,17 +167,11 @@ function setFillColor(color) {
 
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
-    // const elImg = document.querySelector(`.img${imgId}`)
-    // gCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gCanvas.width
-    // gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
+    const elImg = document.querySelector(`.img${gMeme.selectedImgId}`)
+    const aspectRatio = elImg.naturalWidth / elImg.naturalHeight
+    gCanvas.width = 500
+    gCanvas.height = gCanvas.width / aspectRatio
 }
-
-// function onSelectImg(elImg) {
-//     console.log(gCanvas.height)
-//     gCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gCanvas.width
-//     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
-//     gCtx.drawImg(elImg, 0, 0, img.naturalWidth.width, img.naturalHeight.height)
-// }
 
 function onDownloadCanvas(elLink) {
     const dataUrl = gCanvas.toDataURL()

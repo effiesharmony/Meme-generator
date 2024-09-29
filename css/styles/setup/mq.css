@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+    .editor {
+        grid-template-columns: 1fr
+    }
+
+    .canvas-container {
+        padding-top: 75%
+    }
+
+    .panel-container {
+        flex-direction: column
+    }
+}
