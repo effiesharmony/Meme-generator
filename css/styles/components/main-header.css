@@ -14,6 +14,14 @@
     margin-inline-end: 15px;
 }
 
+.main-nav-list li{
+    transition: 200ms;
+}
+
+.main-nav-list li:hover{
+    scale: 1.1
+}
+
 h1 {
     margin: 0;
 }
@@ -24,4 +32,8 @@ h1 {
 
 .gallery-nav:hover {
     cursor: pointer;
+}
+
+.logo:hover {
+    cursor: default;
 }

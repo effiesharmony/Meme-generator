@@ -13,6 +13,14 @@ img{
     min-width: 0;
 }
 
-.gallery img:hover {
+.gallery img:hover:not(.my-picture) {
     cursor: pointer;
+}
+
+.gallery-list img{
+    transition: 200ms;
+}
+
+.gallery-list img:hover{
+    scale: 1.05;
 }

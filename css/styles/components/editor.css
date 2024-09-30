@@ -14,6 +14,14 @@
   padding: 10px;
 }
 
+.emojis-container button{
+  transition: 200ms;
+}
+
+.emojis-container button:hover{
+  scale: 1.5;
+}
+
 button {
   padding: 3px;
   width: 40px;
@@ -67,6 +75,10 @@ button {
   max-width: 400px;
   border-radius: 10px;
   text-align: center;
+}
+
+.text-input:hover{
+  cursor: text;
 }
 
 .control-panel img {
